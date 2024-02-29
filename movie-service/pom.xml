@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>movie-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>movie-service</name>
 	<description>Movies Unir</description>
 
