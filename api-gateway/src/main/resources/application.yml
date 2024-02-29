@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: api-gateway
+  #Definir ruta de inventarios
+  cloud:
+    gateway:
+      routes[0]:
+        id: movie-service
+        uri: lb://movie-service
+        predicates: Path=/api/movies/**
+      routes[1]:
+        id: sala-service
+        uri: lb://sala-service
+        predicates: Path=/api/salas/**
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8671/eureka
+
+logging:
+  level:
+    root: info

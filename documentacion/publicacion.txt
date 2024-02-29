@@ -1,0 +1,2 @@
+ejecutar posterior en la terminal  mvn clean install
+Crear archivo Dockerfile

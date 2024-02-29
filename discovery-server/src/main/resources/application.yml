@@ -1,0 +1,22 @@
+server:
+  port: 8671
+
+spring:
+  application:
+    name: discovery-server
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000
+    max-time-for-replication: 30000
+    enable-self-preservation: true
