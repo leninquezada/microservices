@@ -32,7 +32,7 @@ public class MovieController {
     @ResponseStatus(HttpStatus.OK)
     public Map<String, Object> remove(@PathVariable Integer id){
         boolean Ok = this.service.remove(id);
-        String response = "";
+        String response;
         if (Ok){
             response ="Movie con Id " + id + " eliminado exitosamente";
 
